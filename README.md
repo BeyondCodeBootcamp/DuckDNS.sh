@@ -7,7 +7,7 @@ A Posix Shell Script (Bash-compatible) for tracking your IP address
 
 ```sh
 mkdir -p ~/bin/
-curl -fsSL -o ~/.local/bin/duckdns.sh https://raw.githubusercontent.com/BeyondCodeBootcamp/DuckDNS.sh/main/duckdns.sh
+curl -fsSL -o ~/bin/duckdns.sh https://raw.githubusercontent.com/BeyondCodeBootcamp/DuckDNS.sh/main/duckdns.sh
 chmod a+x ~/bin/duckdns.sh
 ```
 
@@ -34,13 +34,13 @@ You'll need to create your account, subdomain, and token before you can use `duc
 # Usage
 
 ```sh
-duckdns.sh run <subdomain>
+~/bin/duckdns.sh run <subdomain>
 ```
 
 # Examples
 
 ```sh
-duckdns.sh run foo            # periodically check ip address and update subdomain
+~/bin/duckdns.sh run foo      # periodically check ip address and update subdomain
 ```
 
 # License
