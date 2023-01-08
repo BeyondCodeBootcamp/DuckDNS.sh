@@ -11,37 +11,74 @@ curl -fsSL -o ~/bin/duckdns.sh https://raw.githubusercontent.com/BeyondCodeBootc
 chmod a+x ~/bin/duckdns.sh
 ```
 
-# Configure
-
-You'll need to create your account, subdomain, and token before you can use `duckdns.sh`.
-
-1. Login to <https://duckdns.org>
-2. Create a subdomain, such as `CHANGE-ME` for `CHANGE-ME.duckdns.org`
-3. Copy your DNS Token
-4. Create your subdomain token file:
-    ```sh
-    mkdir -p ~/.config/duckdns.sh/
-    touch ~/.config/duckdns.sh/CHANGE_ME.env
-    ```
-5. Place your token in the file as `DUCKDNS_TOKEN=xxxxxxxx-YOUR-TOKEN...`:
-    ```sh
-    vim ~/.config/duckdns.sh/CHANGE_ME.env
-    ```
-    ```text
-    DUCKDNS_TOKEN=xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx
-    ```
-
 # Usage
 
-```sh
-~/bin/duckdns.sh run <subdomain>
+```text
+USAGE
+    duckdns.sh <subcommand> [arguments...]
+
+SUBCOMMANDS
+    myip                         - show this device's ip(s)
+    ip <subdomain>               - show subdomain's ip(s)
+
+    list                         - show subdomains
+    init <subdomain>             - add Duck DNS token
+    update <subdomain>           - update subdomain to device ip
+    set <subdomain> <ip> [ipv6]  - set ipv4 and/or ipv6 explicitly
+    clear <subdomain>            - unset ip(s)
+    run <subdomain>              - check ip and update every 5m
+    enable <subdomain>           - enable on boot (Linux) or login (macOS)
+    disable <subdomain>          - disable on boot or login
+
+    help                         - show this menu
 ```
 
 # Examples
 
 ```sh
-~/bin/duckdns.sh run foo      # periodically check ip address and update subdomain
+duckdns.sh myip
+duckdns.sh ip foo
+
+duckdns.sh list
+duckdns.sh init foo
+
+duckdns.sh update foo
+duckdns.sh set foo 127.0.0.1
+duckdns.sh set foo ::1
+duckdns.sh set foo 127.0.0.1 ::1
+duckdns.sh clear foo
+
+duckdns.sh run foo
+duckdns.sh enable foo
+duckdns.sh disable foo
 ```
+
+# Configure
+
+You'll need to create your account, subdomain, and token before you can use `duckdns.sh`.
+
+1. Login to <https://duckdns.org> and create a subdomain, such as `CHANGE-ME` for `CHANGE-ME.duckdns.org`
+2. Copy your DNS Token
+3. Create your subdomain token env file:
+
+    ```sh
+    duckdns.sh init CHANGE_ME
+    ```
+
+    or
+
+    ```sh
+    # create the env file
+    mkdir -p ~/.config/duckdns.sh/
+    touch ~/.config/duckdns.sh/CHANGE_ME.env
+
+    # write your token to the env file
+    vim ~/.config/duckdns.sh/CHANGE_ME.env
+    ```
+
+    ```text
+    DUCKDNS_TOKEN=xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx
+    ```
 
 # License
 
