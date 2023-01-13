@@ -5,10 +5,22 @@ A Posix Shell Script (Bash-compatible) for tracking your IP address
 
 # Install
 
+Both install methods are fairly similar.
+
+## via [Webi](https://webinstall.dev/)
+
 ```sh
+curl -sS https://webi.sh/duckdns.sh@v1 | sh
+source ~/.config/envman/PATH.env
+```
+
+## via Git Assets
+
+```sh
+my_branch="v1"
+
 mkdir -p ~/bin/
 
-my_branch="v1"
 curl -fsSL -o ~/bin/duckdns.sh \
     "https://raw.githubusercontent.com/BeyondCodeBootcamp/DuckDNS.sh/${my_branch}/duckdns.sh"
 
