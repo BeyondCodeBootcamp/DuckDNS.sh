@@ -22,7 +22,7 @@ SUBCOMMANDS
     ip <subdomain>               - show subdomain's ip(s)
 
     list                         - show subdomains
-    init <subdomain>             - add Duck DNS token
+    auth <subdomain>             - add Duck DNS token
     update <subdomain>           - update subdomain to device ip
     set <subdomain> <ip> [ipv6]  - set ipv4 and/or ipv6 explicitly
     clear <subdomain>            - unset ip(s)
@@ -40,7 +40,7 @@ duckdns.sh myip
 duckdns.sh ip foo
 
 duckdns.sh list
-duckdns.sh init foo
+duckdns.sh auth foo
 
 duckdns.sh update foo
 duckdns.sh set foo 127.0.0.1
@@ -62,7 +62,7 @@ You'll need to create your account, subdomain, and token before you can use `duc
 3. Create your subdomain token env file:
 
     ```sh
-    duckdns.sh init CHANGE_ME
+    duckdns.sh auth CHANGE_ME
     ```
 
     or
