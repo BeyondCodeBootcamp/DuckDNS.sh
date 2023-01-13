@@ -216,11 +216,11 @@ fn_duckdns_clear() { (
     # shellcheck disable=SC1090
     . ~/.config/duckdns.sh/"${DUCKDNS_SH_SUBDOMAIN}.env"
 
-    echo curl "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=****&clear=true"
+    echo curl -fsSL "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=****&clear=true"
 
     printf "Clearing IP address(es)... "
 
-    curl "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=${DUCKDNS_TOKEN}&clear=true"
+    curl --max-time 5.5 -fsSL "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=${DUCKDNS_TOKEN}&clear=true"
     # &verbose=true
 
     echo ""
@@ -240,7 +240,7 @@ fn_duckdns_update() { (
         my_ipv6_param="&ipv6=${my_ipv6}"
     fi
 
-    echo curl "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=****${my_ipv4_param}${my_ipv6_param}"
+    echo curl -fsSL "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=****${my_ipv4_param}${my_ipv6_param}"
     # &verbose=true
 
     if [ -n "${my_ipv6_param}" ]; then
@@ -260,7 +260,7 @@ fn_duckdns_update() { (
 
     # shellcheck disable=SC1090
     . ~/.config/duckdns.sh/"${DUCKDNS_SH_SUBDOMAIN}.env"
-    curl "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=${DUCKDNS_TOKEN}${my_ipv4_param}${my_ipv6_param}"
+    curl --max-time 5.5 -fsSL "https://www.duckdns.org/update?domains=${DUCKDNS_SH_SUBDOMAIN}&token=${DUCKDNS_TOKEN}${my_ipv4_param}${my_ipv6_param}"
 
     # duckdns.org will respond with "OK", but we still need a newline
     echo ""
@@ -384,14 +384,14 @@ fn_update_ips() { (
 
     echo curl -fsSL 'https://api.ipify.org?format=text'
     my_current_ipv4="$(
-        curl -fsSL 'https://api.ipify.org?format=text'
+        curl --max-time 5.5 -fsSL 'https://api.ipify.org?format=text'
     )"
     echo "IPv4 ${my_current_ipv4:-(NONE)}"
     echo ""
 
     echo curl -fsSL 'https://api64.ipify.org?format=text'
     my_current_ipv6="$(
-        curl -fsSL 'https://api64.ipify.org?format=text'
+        curl --max-time 5.5 -fsSL 'https://api64.ipify.org?format=text'
     )"
     if [ "${my_current_ipv4}" = "${my_current_ipv6}" ]; then
         my_current_ipv6=""
