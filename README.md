@@ -7,7 +7,11 @@ A Posix Shell Script (Bash-compatible) for tracking your IP address
 
 ```sh
 mkdir -p ~/bin/
-curl -fsSL -o ~/bin/duckdns.sh https://raw.githubusercontent.com/BeyondCodeBootcamp/DuckDNS.sh/main/duckdns.sh
+
+my_branch="v1"
+curl -fsSL -o ~/bin/duckdns.sh \
+    "https://raw.githubusercontent.com/BeyondCodeBootcamp/DuckDNS.sh/${my_branch}/duckdns.sh"
+
 chmod a+x ~/bin/duckdns.sh
 ```
 
