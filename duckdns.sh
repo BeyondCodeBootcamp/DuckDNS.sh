@@ -101,9 +101,10 @@ cmd_launcher_uninstall() { (
 
     # macOS
     if command -v launchctl > /dev/null; then
-        launchctl unload -w sh.duckdns."${DUCKDNS_SH_SUBDOMAIN}"
+        echo launchctl unload -w ~/Library/LaunchAgents/sh.duckdns."${DUCKDNS_SH_SUBDOMAIN}".plist
+        launchctl unload -w ~/Library/LaunchAgents/sh.duckdns."${DUCKDNS_SH_SUBDOMAIN}".plist
 
-        echo "Disabled login launcher: sh.duckdns.${DUCKDNS_SH_SUBDOMAIN}"
+        echo "Disabled login launcher."
         exit 0
     fi
 
