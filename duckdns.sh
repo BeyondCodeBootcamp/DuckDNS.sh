@@ -40,10 +40,10 @@ dep_check() { (
 
 update_ips() { (
     my_domain_ipv4="$(
-        dig +short A beyondfoo.duckdns.org
+        dig +short A "${my_subdomain}.duckdns.org"
     )"
     my_domain_ipv6="$(
-        dig +short AAAA beyondfoo.duckdns.org
+        dig +short AAAA "${my_subdomain}.duckdns.org"
     )"
     echo "${my_subdomain}.duckdns.org A ${my_domain_ipv4:-(NONE)}"
     echo "${my_subdomain}.duckdns.org AAAA ${my_domain_ipv6:-(NONE)}"
