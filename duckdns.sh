@@ -62,7 +62,7 @@ cmd_launcher_install() { (
     fn_require_curl
 
     if ! command -v serviceman > /dev/null; then
-        curl --max-time 5.5 -fsSL https://webinstall.dev/serviceman | sh
+        curl --max-time 5.5 -fsSL https://webi.sh/serviceman | sh
         # shellcheck disable=SC1090
         . ~/.config/envman/PATH.env
     fi
