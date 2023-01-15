@@ -38,3 +38,13 @@ git commit -m "chore(release): bump to ${my_version}"
 git tag "${my_version}"
 
 git describe --tags
+
+echo "######################"
+echo "##                  ##"
+echo "##  DON'T FORGET!!  ##"
+echo "##   (publish it)   ##"
+echo "##                  ##"
+echo "######################"
+echo ""
+echo "https://github.com/BeyondCodeBootcamp/DuckDNS.sh/releases/new"
+echo ""
