@@ -201,6 +201,15 @@ cmd_update() { (
     fn_update_ips
 ); }
 
+cmd_version() { (
+    my_year='0000'
+    my_version='v0.0.0'
+    my_date='0000-00-00'
+
+    echo "DuckDNS.sh ${my_version} (${my_date})"
+    echo "Copyright ${my_year} AJ ONeal"
+); }
+
 fn_check_env() { (
     if ! [ -e ~/.config/duckdns.sh/"${DUCKDNS_SH_SUBDOMAIN}.env" ]; then
         exit 1
@@ -447,6 +456,7 @@ main() { (
         update) cmd_update ;;
         __noop__) ;;
         help | --help | -h) fn_help ;;
+        version | --version | -V) cmd_version ;;
         *)
             fn_help
             exit 1
@@ -473,6 +483,7 @@ fn_help() { (
     echo "    disable <subdomain>          - disable on boot or login"
     echo ""
     echo "    help                         - show this menu"
+    echo "    version                      - show version and exit"
     echo ""
 ); }
 
