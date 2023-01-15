@@ -439,7 +439,6 @@ main() { (
         clear) cmd_clear ;;
         disable) cmd_launcher_uninstall ;;
         enable) cmd_launcher_install ;;
-        help) fn_help ;;
         ip) cmd_ip ;;
         list) cmd_list ;;
         myip) cmd_myip ;;
@@ -447,6 +446,7 @@ main() { (
         set) cmd_set ;;
         update) cmd_update ;;
         __noop__) ;;
+        help | --help | -h) fn_help ;;
         *)
             fn_help
             exit 1
