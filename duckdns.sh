@@ -202,9 +202,9 @@ cmd_update() { (
 ); }
 
 cmd_version() { (
-    my_year='0000'
-    my_version='v0.0.0'
-    my_date='0000-00-00'
+    my_year='2023'
+    my_version='v1.0.3'
+    my_date='2023-01-15 00:49:52 +0000'
 
     echo "DuckDNS.sh ${my_version} (${my_date})"
     echo "Copyright ${my_year} AJ ONeal"
