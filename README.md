@@ -115,6 +115,8 @@ The third is adding version info and publishing to [webi](https://webinstall.dev
 
 <a href="https://www.youtube.com/playlist?list=PLxki0D-ilnqYdJDMOgwSnGtc03FeyNeVb"><kbd><img width="782" alt="YouTube Thumbnail" src="https://user-images.githubusercontent.com/122831/212806190-4d6cb441-03cb-4a3b-8a4c-ade659017693.png"></kbd></a>
 
+Watch <https://www.youtube.com/playlist?list=PLxki0D-ilnqYdJDMOgwSnGtc03FeyNeVb>.
+
 # License
 
 CC0-1.0 (Public Domain) \
