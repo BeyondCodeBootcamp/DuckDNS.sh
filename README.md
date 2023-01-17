@@ -3,6 +3,15 @@
 A Posix Shell Script (Bash-compatible) for tracking your IP address
 (at home, or on devices).
 
+# Table of Contents
+
+- ⚡️ Install
+- 💪 Usage
+- 👩‍🏫 Examples
+- ⚙️ Configure
+- 🔴 Watch the Live-Stream
+- 📄 License
+
 # Install
 
 Both install methods are fairly similar.
@@ -95,6 +104,18 @@ You'll need to create your account, subdomain, and token before you can use `duc
     ```text
     DUCKDNS_TOKEN=xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx
     ```
+
+# Watch
+
+The making of this project was completely live-streamed (aside from one or two small typo edits that were done off-camera).
+
+The first two videos are the project.
+
+The third is adding version info and publishing to [webi](https://webinstall.dev).
+
+<a href="https://www.youtube.com/playlist?list=PLxki0D-ilnqYdJDMOgwSnGtc03FeyNeVb"><kbd><img width="782" alt="YouTube Thumbnail" src="https://user-images.githubusercontent.com/122831/212806190-4d6cb441-03cb-4a3b-8a4c-ade659017693.png"></kbd></a>
+
+Watch <https://www.youtube.com/playlist?list=PLxki0D-ilnqYdJDMOgwSnGtc03FeyNeVb>.
 
 # License
 
